@@ -71,6 +71,21 @@ var ProjectListView = Backbone.View.extend({
 });
 
 
+var ProjectView = Backbone.View.extend({
+  el: $('#main'),
+  initialize: function () {
+
+  },
+  render: function () {
+    // STEP 21: Handlebars stuff
+    var source = $('#detailed-project-template').html(),
+      template = Handlebars.compile(source),
+      templatedHTML = template(this.model.toJSON());
+    // STEP 22: Replace all the HTML on the #main div
+    this.$el.html(templatedHTML);
+    return this;
+  }
+});
 
 
 //Router/Controller combination
@@ -85,15 +100,15 @@ var AppRouter = Backbone.Router.extend({
     // Intializing routes with data.
     // This gives me app.projects
      this.projects = new Projects([
-        new Project({name: "Workout Builder", slug: "first-project",
+        new Project({name: "Workout Builder", slug: "workoutBuilder",
                     github_url: "http://github.com/tjblonsk/workout_builder",
                     live_url: "http://nameless-everglades-2928.herokuapp.com/",
                     thumbnail_url: "http://www.makeathumbnail.com/thumbnails/image194025.png",
                     description: "My first application (individual) utilized 5 models, 3 controllers, relational databasing, YouTube API, and Twitter Bootstrap to create an application for creating and storing workouts referencing videos from YouTube."}),
-        new Project({name: "Explorer", slug: "second-project",
+        new Project({name: "Explorer", slug: "explorer",
                     github_url: "http://github.com/tjblonsk/explorer",
                     live_url: "http://powerful-journey-3230.herokuapp.com/",
-                    description: "The second application (two-person team)   utilized 3 models, 2 controllers, 4Square API, Yelp API, Leaflet API to build a mapping application in which users can explore and save favorited locations."
+                    description: "The second application (two-person team) utilized 3 models, 2 controllers, 4Square API, Yelp API, Leaflet API to build a mapping application in which users can explore and save favorited locations."
                     })
       ]);
   },
