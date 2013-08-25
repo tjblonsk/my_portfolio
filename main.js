@@ -52,3 +52,13 @@ var AppRouter = Backbone.Router.extend({
     projectView.render();
   }
 });
+
+
+$(function() {
+  // Create instance of Router
+  app = new AppRouter();
+
+  // Start History
+  Backbone.history.start();
+
+});
