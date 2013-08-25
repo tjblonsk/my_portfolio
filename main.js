@@ -17,6 +17,31 @@ var Projects = Backbone.Collection.extend({
   model: Project
 });
 
+var AppView = Backbone.View.extend({
+  // This sets up the main page
+  el: $('#main'),
+  initialize: function() {
+    // Populate the application with my appView template
+    var appViewTemplate = $('#appView-template').html();
+    this.$el.html(appViewTemplate);
+    // Cache commonly used selectors
+    this.list = $('#project-list');
+  },
+  render: function() {
+    // Create views for each Project in the Projects collection
+    this.collection.each(function(project){
+      // Generate the backbone view object and set the model
+      // Each project gets its own view
+      var view = new ProjectListView({model: project});
+
+      // Using the cached object from initialize, append the new view to the list
+      this.list.append(view.render().el);
+    }, this);
+
+    return this;
+  }
+});
+
 
 var ProjectListView = Backbone.View.extend({
   // Setup and render the individual project
@@ -44,6 +69,8 @@ var ProjectListView = Backbone.View.extend({
     app.navigate('project/' + this.model.get('slug'), true);
   }
 });
+
+
 
 
 //Router/Controller combination
