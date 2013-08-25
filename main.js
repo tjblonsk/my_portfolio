@@ -108,6 +108,7 @@ var AppRouter = Backbone.Router.extend({
         new Project({name: "Explorer", slug: "explorer",
                     github_url: "http://github.com/tjblonsk/explorer",
                     live_url: "http://powerful-journey-3230.herokuapp.com/",
+                    thumbnail_url: "http://www.makeathumbnail.com/thumbnails/image194053.png",
                     description: "The second application (two-person team) utilized 3 models, 2 controllers, 4Square API, Yelp API, Leaflet API to build a mapping application in which users can explore and save favorited locations."
                     })
       ]);
