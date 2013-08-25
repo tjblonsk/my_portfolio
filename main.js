@@ -11,6 +11,10 @@ var Project = Backbone.Model.extend({
   }
 });
 
+// This is a collection that represents a set of my data
+var Projects = Backbone.Collection.extend({
+  model: Project
+});
 
 //Router/Controller combination
 var AppRouter = Backbone.Router.extend({
