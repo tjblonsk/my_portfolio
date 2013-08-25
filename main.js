@@ -21,7 +21,7 @@ var AppRouter = Backbone.Router.extend({
     'project/:slug':'getProject' //Router catches this URL change. Runs 'getProject()'
   },
   initialize: function() {
-    // STEP 4: intialize routes with data.
+    // Intializing routes with data.
     // This gives me app.projects
      this.projects = new Projects([
         new Project({name: "Workout Builder", slug: "first-project",
@@ -37,18 +37,18 @@ var AppRouter = Backbone.Router.extend({
       ]);
   },
   index: function() {
-    // STEP 7: When someone goes to the index. This happens
-    // Create a new instance of our AppView, pass in all our projects
+    // When someone goes to the index. This happens
+    // Create a new instance of the AppView, pass in all my projects
     var appView = new AppView({collection: this.projects});
-    // STEP 9: Calls render on appView
+    // Calls render on appView
     appView.render();
   },
   getProject: function(slug) {
-    // STEP 18: We are passed the 'slug' variable from the URL
-    var project = this.projects.get(slug); // STEP 19: Searching for the matching project
-    // STEP 20 : Create a new instance of ProjectView, passing in the project
+    // Passed the 'slug' variable from the URL
+    var project = this.projects.get(slug); // Searching for the matching project
+    // Create a new instance of ProjectView, passing in the project
     var projectView = new ProjectView({model: project});
-    // STEP 21: Render the projectView
+    // Render the projectView
     projectView.render();
   }
 });
