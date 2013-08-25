@@ -11,10 +11,40 @@ var Project = Backbone.Model.extend({
   }
 });
 
+
 // This is a collection that represents a set of my data
 var Projects = Backbone.Collection.extend({
   model: Project
 });
+
+
+var ProjectListView = Backbone.View.extend({
+  // Setup and render the individual project
+  tagName: 'li',
+  events: {
+    // Register a click event
+    'click':'view'
+  },
+  initialize: function() {
+    // Don't need to do anything here yet
+  },
+  render: function() {
+    // Handlebars stuff below
+    var source = $('#project-template').html(),
+      template = Handlebars.compile(source),
+      data = this.model.toJSON(),
+      templateHTML = template(data);
+      this.$el.html(templateHTML);
+
+    return this;
+  },
+  // The click event triggers this method
+  view: function() {
+    // Navigate to the Project page, which goes back through the router
+    app.navigate('project/' + this.model.get('slug'), true);
+  }
+});
+
 
 //Router/Controller combination
 var AppRouter = Backbone.Router.extend({
