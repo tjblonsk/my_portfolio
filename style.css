@@ -14,7 +14,7 @@
 .navbar-inner li:last-child {border-right: none}
 
 h1 {
-  font-family: HelveticaNeue;
+  font-family:"cursive";
   color: blue;
   font-weight: bold;
   text-align: center;
@@ -34,6 +34,14 @@ h3 {
 }
 
 ul {
+  text-align: center;
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+  list-style-type: none;
+}
+
+.project {
   text-align: center;
   width: 700px ;
   margin-left: auto ;
