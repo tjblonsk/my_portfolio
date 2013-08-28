@@ -13,6 +13,10 @@
 
 .navbar-inner li:last-child {border-right: none}
 
+body {
+    background: url(my_portfolio/img/grey_wash_wall.png);
+}
+
 h1 {
   font-family: Palatino, serif;
   color: blue;
