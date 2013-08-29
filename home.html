@@ -3,6 +3,7 @@
 <head>
   <title>Tim Blonski Portfolio</title>
   <link href="style.css" rel="stylesheet" />
+  <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
      <nav class="navbar-inner">
@@ -11,9 +12,10 @@
       <li><a href="">My Resume</a></li>
       <li><a href="http://www.github.com/tjblonsk/my_portfolio">Built in Backbone.js</a></li>
     </nav>
+
   <script id="project-template" type="x-handlebars-template">
     <div class="project">
-      <h2>{{name}}</h2>
+      <h2 class="headers">{{name}}</h2>
       <img src="{{thumbnail_url}}" />
     </div>
   </script>
@@ -28,7 +30,7 @@
     </div>
   </script>
 
-  <script id="projects-template" type="x-handlebars-template">
+   <script id="projects-template" type="x-handlebars-template">
     <div class="projects">
     {{#each projects}}
       {{>project}}
@@ -39,7 +41,7 @@
   <script id="appView-template" type="x-handlebars-template">
     <div class="appView">
     <h1>Tim Blonski</h1>
-     <h3>I am full-stack Ruby on Rails developer with a passion for coding and the power it can offer through a combination of persistence and creativity. <br>I hope to channel my love for intellectual growth, technology, and people into a meaningful and challenging career.</h3>
+     <p>I am full-stack Ruby on Rails developer with a passion for coding and the </br>power it can offer through a combination of persistence and creativity. </br>I hope to channel my love for intellectual growth, technology, and </br>people into a meaningful and challenging career.</p>
     </div>
     <ul id="project-list"></ul>
   </script>
