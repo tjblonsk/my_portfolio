@@ -75,7 +75,7 @@ ul {
   text-align: center;
   width: 1000px ;
   margin: auto;
-  margin-left: 150px;
+  margin-left: auto;
   list-style-type: none;
 }
 
