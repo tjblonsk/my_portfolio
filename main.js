@@ -100,11 +100,17 @@ var AppRouter = Backbone.Router.extend({
     // Intializing routes with data.
     // This gives me app.projects
      this.projects = new Projects([
+        new Project({name: "ideaHub", slug: "ideaHub",
+                    github_url: "http://github.com/tjblonsk/ideaHub",
+                    live_url: "http://ideahubb.herokuapp.com",
+                    thumbnail_url:"img/ideaHubSS.png",
+                    description: "This app utilizes 5 models, 4 controllers, and the GitHub API to create a platform in which developers can collaborate on side projects."
+                    }),
         new Project({name: "Explorer", slug: "explorer",
                     github_url: "http://github.com/tjblonsk/explorer",
                     live_url: "http://powerful-journey-3230.herokuapp.com/",
                     thumbnail_url: "img/journey_thumb.jpg",
-                    description: "The second application (two-person team) utilized 3 models, 2 controllers, 4Square API, Yelp API, Leaflet API to build a mapping application in which users can explore and save favorited locations."
+                    description: "This app utilizes 3 models, 2 controllers, 4Square API, Yelp API, Leaflet API to build a mapping application in which users can explore and save favorited locations."
                     }),
         new Project({name: "Workout Builder", slug: "workoutBuilder",
                     github_url: "http://github.com/tjblonsk/workout_builder",
